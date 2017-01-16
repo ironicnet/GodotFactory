@@ -1,4 +1,6 @@
 extends Node
+signal work_step
+
 var timer;
 func _init():
 	print('Game manager init')

@@ -2,18 +2,20 @@ extends Node
 
 signal work_step
 
-var timer
-var recipeFactory = null
-var gameManager
+const recipeFactory = preload('res://scripts/recipefactory.gd')
+const gameManager = preload('res://scripts/gamemanager.gd')
+
+var gameManagerInstance
+var recipeFactoryInstance
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	print('Global ready!')
-	recipeFactory = preload('res://scripts/recipefactory.gd').new()
-	gameManager = preload('res://scripts/gamemanager.gd').new()
-func _timer_callback():
-	print('Callback')
-	emit_signal("work_step")
+	recipeFactoryInstance = recipeFactory.new()
+	gameManagerInstance = gameManager.new()
+	gameManagerInstance._ready()
 func getRecipeFactory():
-	return recipeFactory;
+	return recipeFactoryInstance;
+func getGameManager():
+	return gameManagerInstance;
