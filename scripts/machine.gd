@@ -21,12 +21,15 @@ export(int) var currentRecipeCode;
 var input = [];
 var working = [];
 var output = [];
-
+var gameManagerNode
+var globalNode
 
 func _ready():
 	connect("input", self, "input_ready")
 	connect("output", self, "output_ready")
-	get_node("/root/global").getGameManager().connect("work_step", self, "work_step")
+	globalNode = get_node("/root/global")
+	gameManagerNode = get_node("/root/gamemanager")
+	gameManagerNode.connect("work_step", self, "work_step")
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
@@ -52,7 +55,7 @@ func doTransferWork():
 func doGenerateWork():
 	var toRemove = [];
 	if (working.size()==0):
-		var workInfoInstance = workinfo.new(get_node("/root/global").getRecipeFactory().getRecipe(currentRecipeCode))
+		var workInfoInstance = workinfo.new(globalNode.getRecipeFactory().getRecipe(currentRecipeCode))
 		working.push_front(workInfoInstance)
 	else: 
 		for index in range(0, working.size()):
