@@ -10,6 +10,7 @@ func _ready():
 	timer.set_timer_process_mode(timer.TIMER_PROCESS_FIXED)
 	timer.set_wait_time(1)
 	timer.connect("timeout", self, "_timer_callback")
+	add_child(timer)
 	timer.start()
 	print('Game manager Ready')
 	pass

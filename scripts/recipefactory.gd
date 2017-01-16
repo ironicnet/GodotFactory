@@ -5,8 +5,8 @@ extends Node
 var recipeRef = preload('res://scripts/recipe.gd')
 var recipes = {
 	0: null,
-	1: recipeRef.new("Base", 100, null),
-	2: recipeRef.new("Objeto", 200,[{1: 5}])
+	1: recipeRef.new("Base", 10, null),
+	2: recipeRef.new("Objeto", 20,[{1: 5}])
 }
 func _ready():
 	# Called every time the node is added to the scene.

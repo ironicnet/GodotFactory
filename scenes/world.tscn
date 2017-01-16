@@ -11,7 +11,7 @@ transform/pos = Vector2( 307, 285 )
 
 [node name="Room" type="Sprite" parent="."]
 
-transform/pos = Vector2( -0.499985, -0.499985 )
+transform/pos = Vector2( -35.5, 24.5 )
 transform/scale = Vector2( 8.07813, 8.07813 )
 texture = ExtResource( 1 )
 modulate = Color( 0.785156, 0.785156, 0.785156, 1 )
@@ -19,7 +19,7 @@ modulate = Color( 0.785156, 0.785156, 0.785156, 1 )
 [node name="Machine" parent="." instance=ExtResource( 2 )]
 
 outNode = NodePath("../belt0")
-workType = "GENERATE"
+workType = 1
 totalTransferDistance = null
 currentRecipeCode = 1
 
@@ -31,7 +31,7 @@ texture = ExtResource( 1 )
 modulate = Color( 0.265523, 0.256577, 0.371094, 1 )
 script/script = ExtResource( 3 )
 outNode = NodePath("../belt1")
-workType = "TRANSFER"
+workType = 0
 totalTransferDistance = 20
 currentRecipeCode = null
 
@@ -43,7 +43,7 @@ texture = ExtResource( 1 )
 modulate = Color( 0.265523, 0.256577, 0.371094, 1 )
 script/script = ExtResource( 3 )
 outNode = NodePath("../WorkingArea")
-workType = "TRANSFER"
+workType = 0
 totalTransferDistance = 5
 currentRecipeCode = null
 
