@@ -16,5 +16,4 @@ func _ready():
 	pass
 
 func _timer_callback():
-	print('Callback game manager')
 	emit_signal("work_step")

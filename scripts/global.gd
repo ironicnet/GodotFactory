@@ -10,5 +10,6 @@ func _ready():
 	# Initialization here
 	print('Global ready!')
 	recipeFactoryInstance = recipeFactory.new()
+	add_child(recipeFactoryInstance)
 func getRecipeFactory():
 	return recipeFactoryInstance;
