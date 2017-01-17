@@ -32,7 +32,7 @@ texture = ExtResource( 1 )
 modulate = Color( 0.265523, 0.256577, 0.371094, 1 )
 script/script = ExtResource( 4 )
 outNode = NodePath("../belt1")
-totalTransferDistance = null
+totalTransferDistance = 20
 
 [node name="belt1" type="Sprite" parent="."]
 
@@ -42,7 +42,7 @@ texture = ExtResource( 1 )
 modulate = Color( 0.265523, 0.256577, 0.371094, 1 )
 script/script = ExtResource( 4 )
 outNode = null
-totalTransferDistance = null
+totalTransferDistance = 20
 
 [node name="WorkingArea" type="Sprite" parent="."]
 

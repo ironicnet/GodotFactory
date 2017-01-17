@@ -10,20 +10,19 @@ func work_step():
 	var toRemove = [];
 	if (working.size()==0):
 		print('creating a new working set')
-		var workInfoInstance = workinfo.new(globalNode.getRecipeFactory().getRecipe(currentRecipeCode))
+		var workInfoInstance = workinfo.new(globalNode.getRecipeFactory().getRecipe(currentRecipeCode), 1)
 		working.push_front(workInfoInstance)
 	else: 
 		for index in range(0, working.size()):
 			if (working[index].steps >= working[index].recipe.totalSteps):
-				print('work done!')
-				var result = item.new(working[index].recipe.resultName)
-				output.push_front(result)
+				prints('Produced ',working[index].amount,working[index].recipe.resultName)
+				output.push_front(working[index])
 				toRemove.push_front(index);
 				emit_signal("output")
 				if (outNode != null):
-					get_node(outNode).emit_signal("input", result)
+					get_node(outNode).emit_signal("input", working[index])
 			else:
 				working[index].steps += 1
-				print('work added!')
+				prints('Producing ',working[index].amount,working[index].recipe.resultName,(working[index].steps/working[index].recipe.totalSteps)*10, working[index].steps, working[index].recipe.totalSteps)
 	for index in toRemove:
 		working.remove(index)
