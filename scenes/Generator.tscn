@@ -27,11 +27,13 @@ currentRecipeCode = 1
 
 [node name="Bottom" type="AnimatedSprite" parent="."]
 
+visibility/visible = false
 frames = SubResource( 1 )
 animation = "idle"
 
 [node name="Top" type="AnimatedSprite" parent="."]
 
+visibility/visible = false
 frames = SubResource( 2 )
 animation = "idle"
 

@@ -7,8 +7,8 @@ var recipes = null
 func _init():
 	recipes = {
 	0: null,
-	1: recipeRef.new("Base", 30, null),
-	2: recipeRef.new("Objeto", 20,[{1: 5}])
+	1: recipeRef.new("Base", 30, null, load("res://textures/resources/base.png")),
+	2: recipeRef.new("Objeto", 20,[{1: 5}], null)
 	}
 func _ready():
 	# Called every time the node is added to the scene.

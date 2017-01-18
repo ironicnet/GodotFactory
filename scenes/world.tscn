@@ -31,6 +31,8 @@ texture = ExtResource( 2 )
 
 [node name="Generator" parent="." instance=ExtResource( 3 )]
 
+[node name="Node2D" type="Node2D" parent="Generator"]
+
 [node name="Transfer0" parent="." instance=ExtResource( 4 )]
 
 [node name="Transfer1" parent="." instance=ExtResource( 4 )]

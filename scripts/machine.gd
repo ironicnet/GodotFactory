@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 signal output
 signal input

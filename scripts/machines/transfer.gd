@@ -1,6 +1,7 @@
 extends "res://scripts/machine.gd"
 
 export(int) var totalTransferDistance = 20;
+var transferAmount = 1
 
 func input_ready(data):
 	print("Transfer Input!")
@@ -19,7 +20,7 @@ func work_step():
 			if (outNode != null):
 				get_node(outNode).emit_signal("input", working[index])
 		else:
-			working[index].steps += 1
+			working[index].steps += transferAmount
 			prints('Transfering ',working[index].amount,working[index].recipe.resultName,working[index].getPercentage(), working[index].steps, working[index].totalSteps)
 	for index in toRemove:
 		working.remove(index)
