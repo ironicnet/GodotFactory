@@ -14,8 +14,8 @@ func work_step():
 		working.push_front(workInfoInstance)
 	else: 
 		for index in range(0, working.size()):
-			if (working[index].steps >= working[index].recipe.totalSteps):
-				prints('Produced ',working[index].amount,working[index].recipe.resultName)
+			if (working[index].steps >= working[index].totalSteps):
+				prints('Produced ', working[index].amount, working[index].recipe.resultName)
 				output.push_front(working[index])
 				toRemove.push_front(index);
 				emit_signal("output")
@@ -23,6 +23,6 @@ func work_step():
 					get_node(outNode).emit_signal("input", working[index])
 			else:
 				working[index].steps += 1
-				prints('Producing ',working[index].amount,working[index].recipe.resultName,(working[index].steps/working[index].recipe.totalSteps)*10, working[index].steps, working[index].recipe.totalSteps)
+				prints('Producing ',working[index].amount,working[index].recipe.resultName,working[index].getPercentage(), working[index].steps, working[index].totalSteps)
 	for index in toRemove:
 		working.remove(index)

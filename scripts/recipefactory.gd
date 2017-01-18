@@ -7,7 +7,7 @@ var recipes = null
 func _init():
 	recipes = {
 	0: null,
-	1: recipeRef.new("Base", 10, null),
+	1: recipeRef.new("Base", 30, null),
 	2: recipeRef.new("Objeto", 20,[{1: 5}])
 	}
 func _ready():
